@@ -9,7 +9,7 @@ void bfsTraverse()
 		if(!(currentTreeNode->visited))
 		{
 			printf("%d\t",currentTreeNode->value);
-			for(int i=0; i<5; i++)
+			for(int i=0; i<ORDER; i++)
 			{
 				if((currentTreeNode->children[i])==NULL)
 				{

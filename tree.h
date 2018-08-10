@@ -10,7 +10,7 @@ struct treeNode * createTreeNode(int val)
 	struct treeNode * newNode = (struct treeNode *)malloc(sizeof(struct treeNode));
 	newNode->value = val;
 	newNode->visited = 0;
-	newNode->children = (struct treeNode **)malloc(5*sizeof(struct treeNode *));
+	newNode->children = (struct treeNode **)malloc(ORDER*sizeof(struct treeNode *));
 	return newNode;
 }
 int traverseAndAddNode(struct treeNode* tempRoot, struct treeNode * newNode)
@@ -20,7 +20,7 @@ int traverseAndAddNode(struct treeNode* tempRoot, struct treeNode * newNode)
 		return 0;
 	}
 	int nodeAdded = 0;
-	for(int i=0; i<5; i++)
+	for(int i=0; i<ORDER; i++)
 	{
 		if(tempRoot->children[i]==NULL)
 		{
@@ -31,7 +31,7 @@ int traverseAndAddNode(struct treeNode* tempRoot, struct treeNode * newNode)
 	}
 	if(!nodeAdded)
 	{
-		for(int i=0; i<5; i++)
+		for(int i=0; i<ORDER; i++)
 		{
 			nodeAdded = traverseAndAddNode(tempRoot->children[i],newNode);
 			if(nodeAdded)

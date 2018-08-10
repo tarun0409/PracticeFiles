@@ -7,7 +7,7 @@ void dfsTraverse(struct treeNode * tempRoot)
 	if(!(tempRoot->visited))
 	{
 		printf("%d\t",tempRoot->value);
-		for(int i=0; i<5; i++)
+		for(int i=0; i<ORDER; i++)
 		{
 			if(tempRoot->children[i]==NULL)
 			{
